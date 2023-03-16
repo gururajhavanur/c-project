@@ -1,14 +1,14 @@
 output "ec2_public_ip_address" {
-    value = aws_instance.test1.public_ip
+    value = "aws_instance.test1.public_ip"
 
 }
 
 output "ec2_private_ip_address" {
-    value = aws_instance.test1.private_ip
+    value = "aws_instance.test1.private_ip"
 
 }
 
 output "ec2_pem" {
-    value = aws_instance.test1.key_name
+    value = "aws_instance.test1.key_name"
 
 }
