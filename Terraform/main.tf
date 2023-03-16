@@ -7,8 +7,8 @@ resource "aws_instance" "test1" {
     }
 }
 
-resource "aws_s3_bucket" "s3_terraform_bucket" {
-     bucket = "terraform_s3_bucket"
+resource "aws_s3_bucket" "s3-terraform-bucket" {
+     bucket = "terraform-s3-bucket"
   
 }
 
