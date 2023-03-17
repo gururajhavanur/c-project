@@ -63,7 +63,7 @@ resource "aws_instance" "test1" {
     ami = var.ami-id
     instance_type = var.ec2-type
     key_name = aws_key_pair.pem_file.key_name
-    vpc_security_group_ids = aws_security_group.allow_ssh.id
+    vpc_security_group_ids = [aws_security_group.allow_ssh.id]
     tags = {
         Name = "Terraform"
     }
