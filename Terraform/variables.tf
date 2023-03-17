@@ -21,3 +21,9 @@ variable "key_path" {
     default = "./keys/my_pem" 
   
 }
+
+variable "sg_name" {
+    type = string
+    default = "my_sg" 
+  
+}
