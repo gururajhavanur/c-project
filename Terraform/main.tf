@@ -15,5 +15,5 @@ module "create_ec2" {
     ami-id = var.ec2_ami
     ec2-type =var.ec2_type
     ec2-pem = module.create_pem.ec2_pem
-    ec2-sg_id =module.create_sg.sg_id
+    ec2_sg_id =module.create_sg.sg_id
 } 
