@@ -14,7 +14,7 @@ resource "aws_s3_bucket" "s3-bucket-Terraform" {
 
 resource "aws_vpc" "terraform_vpc" {
     cidr_block = "10.0.0.0/28"
-    instance_tenancy = default
+    instance_tenancy = "default"
     tags = {
       "name" = "terraform-vpc"
     }
