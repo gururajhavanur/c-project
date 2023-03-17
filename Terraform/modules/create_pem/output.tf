@@ -1,4 +1,4 @@
 output "ec2_pem" {
-    value = aws_key_pair.test1.key_name
+    value = aws_key_pair.pem_file.key_name
 
 }
