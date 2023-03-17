@@ -8,7 +8,7 @@ output "ec2_private_ip" {
   
 }
 
-output "key_name" {
+output "ec2-pem" {
     value = aws_instance.ec2_instance.key_name
   
 }
