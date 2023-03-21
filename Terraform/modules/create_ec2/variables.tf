@@ -1,18 +1,15 @@
-variable "ec2-type" {
+variable "ami_id" {
     type = string
 }
 
-variable "ami-id" {
+variable "ec2_type" {
     type = string
-       
 }
 
-variable "ec2-pem" {
+variable "ec2_pem" {
     type = string
-        
-}
+} 
 
 variable "ec2_sg_id" {
     type = string
-        
-}
+} 
