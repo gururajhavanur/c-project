@@ -9,8 +9,8 @@ module "create_pem" {
     key_path = var.root_key_path
 }
 
-module "create_ec2" {
-    source = "github.com/gururajhavanur/terra_modules.git//create_ec2"
+module "create_ec2_2" {
+    source = "github.com/jaintpharsha/terra_module.git//create_ec2"
     ec2_type = var.root_ec2_type
     ec2_pem = module.create_pem.ec2_pem
     ec2_sg_id = module.create_sg.sg_id
@@ -29,7 +29,7 @@ module "create_ec2" {
 
 module "file_provisioner" {
     source = "./modules/file_provisioner"
-    ec2_public_ip = module.create_ec2.ec2_public_ip_address
+    ec2_public_ip = module.create_ec2_2.ec2_public_ip_address
     ec2_user = var.root_ec2_user
     ec2_pem =  var.root_key_path
     source_path = var.root_source_path
@@ -38,12 +38,12 @@ module "file_provisioner" {
 
 module "remote_provisioner" {
     source = "./modules/remote-exec"
-    ec2_public_ip = module.create_ec2.ec2_public_ip_address
+    ec2_public_ip = module.create_ec2_2.ec2_public_ip_address
     ec2_user = var.root_ec2_user
     ec2_pem =  var.root_key_path
 }
 
 module "local_provisioner" {
     source = "./modules/local-exec"
-    ec2_public_ip = module.create_ec2.ec2_public_ip_address 
+    ec2_public_ip = module.create_ec2_2.ec2_public_ip_address 
 }
