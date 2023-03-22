@@ -11,4 +11,4 @@ resource "null_resource" "file_copy" {
         source      = var.source_path
         destination = var.destination_path
     }
-} 
+}  
