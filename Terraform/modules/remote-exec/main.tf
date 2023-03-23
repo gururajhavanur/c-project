@@ -7,6 +7,16 @@ resource "null_resource" "file_copy" {
         agent = false 
     }
     
+    
+    provisioner "remote-exec" {
+        inline = [
+          "sudo apt update -y",
+          "sudo apt install jq git -y",
+          "echo 'This is remote-exec example' > remote-exec.txt"
+        ]
+    }
+}  
+    
     provisioner "remote-exec" {
         inline = [
          "sudo yum install -y jenkins java-11-openjdk-devel",
