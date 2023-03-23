@@ -8,7 +8,16 @@ resource "null_resource" "file_copy" {
     }
 
 
-    
+
+
+    provisioner "remote-exec" {
+        inline = [
+          "sudo apt update -y",
+          "sudo apt install jq git -y",
+          "echo 'This is remote-exec example' > remote-exec.txt"
+        ]
+    }
+}  
     
 #     provisioner "remote-exec" {
 #         inline = [
